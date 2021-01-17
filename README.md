@@ -2,11 +2,9 @@
 
 A small service for small business to receive, process and delivers orders.
 
-## Contributing
+## Running the application in dev mode
 
-### Running the application in dev mode
-
-Start the local database for the application:
+Start the database:
 
 ```shell
 podman run -d --rm \
@@ -17,8 +15,14 @@ podman run -d --rm \
     --name civettadb postgres
 ```
 
-You can run your application in dev mode that enables live coding using:
+Start the Quarkus backend:
 
 ```shell
 ./mvnw compile quarkus:dev
+```
+
+Start the React frontend:
+
+```shell
+cd app && npm start
 ```

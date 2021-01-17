@@ -25,6 +25,15 @@ CREATE TABLE products
     price       FLOAT       NOT NULL
 );
 
+CREATE TABLE lists
+(
+    id          BIGINT      NOT NULL
+        CONSTRAINT lists_pkey PRIMARY KEY,
+
+    name        VARCHAR(32) NOT NULL,
+    description TEXT        NOT NULL
+);
+
 CREATE TABLE customizations
 (
     id         BIGINT  NOT NULL
@@ -39,14 +48,6 @@ CREATE TABLE customizations
         CONSTRAINT clistfkey REFERENCES lists
 );
 
-CREATE TABLE lists
-(
-    id          BIGINT      NOT NULL
-        CONSTRAINT lists_pkey PRIMARY KEY,
-
-    name        VARCHAR(32) NOT NULL,
-    description TEXT        NOT NULL
-);
 
 CREATE TABLE items
 (
